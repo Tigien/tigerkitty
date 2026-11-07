@@ -1,7 +1,7 @@
 <html lang="en-NZ"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Tiger kitty</title>
+<title>Roo's games · Tiger kitty</title>
 <style>
   :root{
     --navy:#002a4d; --navy-2:#0c3a63; --orange:#f18101; --orange-soft:#fff3e4;
@@ -13,20 +13,23 @@
   a{color:inherit}
   :focus-visible{outline:2px solid var(--orange);outline-offset:3px}
 
-  /* Top bar (matches Invoice maker) */
+  /* Top bar (matches the home page) */
   .topbar{background:var(--navy);color:#fff;box-shadow:0 2px 0 var(--orange)}
-  .topbar-inner{max-width:1100px;margin:0 auto;padding:14px 16px;display:flex;align-items:center;gap:12px}
-  .brand{font-weight:800;font-size:18px;letter-spacing:.2px}
+  .topbar-inner{max-width:1100px;margin:0 auto;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+  .brand{font-weight:800;font-size:18px;letter-spacing:.2px;text-decoration:none}
   .brand span{color:var(--orange)}
+  .back{color:#fff;text-decoration:none;font-size:14px;opacity:.85}
+  .back:hover{opacity:1;text-decoration:underline}
 
   /* Hero */
-  .hero{max-width:1100px;width:100%;margin:0 auto;padding:36px 16px 8px}
+  .hero{max-width:1100px;width:100%;margin:0 auto;padding:36px 16px 0}
   .hero h1{margin:0 0 6px;font-size:28px;color:var(--navy)}
   .hero p{margin:0;color:var(--muted)}
+  .hero h2.section{margin:0 0 6px;font-size:22px;color:var(--navy)}
 
-  /* Link cards */
+  /* Game cards */
   main{flex:1}
-  .grid{max-width:1100px;margin:0 auto;padding:24px 16px 48px;display:grid;gap:16px;
+  .grid{max-width:1100px;margin:0 auto;padding:24px 16px 32px;display:grid;gap:16px;
         grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
   .card{display:flex;flex-direction:column;gap:8px;text-decoration:none;background:#fff;border:1px solid var(--line);
         border-radius:12px;padding:18px;border-top:4px solid var(--orange);
@@ -36,10 +39,9 @@
         display:flex;align-items:center;justify-content:center;font-size:22px}
   .card h2{margin:4px 0 0;font-size:17px;color:var(--navy)}
   .card p{margin:0;color:var(--muted);font-size:14px}
+  .card .controls{font-size:13px;color:var(--muted)}
   .card .go{margin-top:auto;padding-top:6px;font-weight:700;color:var(--orange);font-size:14px}
-  .card.soon{border-top-color:var(--line);opacity:.65;pointer-events:none}
-  .card.soon .icon{background:#f1f3f6;color:var(--muted)}
-  .card.soon .go{color:var(--muted)}
+  @media (prefers-reduced-motion:reduce){.card{transition:none}.card:hover{transform:none}}
 
   footer{border-top:1px solid var(--line);background:#fff;color:var(--muted);font-size:13px}
   footer div{max-width:1100px;margin:0 auto;padding:14px 16px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
@@ -49,45 +51,184 @@
 
 <header class="topbar">
   <div class="topbar-inner">
-    <div class="brand">Tiger <span>kitty</span></div>
+    <a class="brand" href="../index.html">Tiger <span>kitty</span></a>
+    <a class="back" href="../index.html">← Back to home</a>
   </div>
 </header>
 
 <main>
-  <nav class="grid" aria-label="Site sections">
+  <section class="hero">
+    <h1>Roo's games</h1>
+    <p>Pick a game to play in your browser. Works with a keyboard, a gamepad or touch.</p>
+  </section>
 
-    <a class="card" href="Invoice%20maker.html">
-      <div class="icon" aria-hidden="true">🧾</div>
-      <h2>Invoice maker</h2>
-      <p>Create, save and print J &amp; T auto invoices.</p>
-      <span class="go">Open →</span>
+  <nav class="grid" aria-label="Games">
+
+    <a class="card" href="Original.html">
+      <div class="icon" aria-hidden="true">🦆</div>
+      <h2>Duck Platformer: Original</h2>
+      <p>The first version, rebuilt from the Unity game. Hop across the ducks to the Finish sign.</p>
+      <span class="controls">Arrows or A/D to move, Space to jump</span>
+      <span class="go">Play →</span>
     </a>
 
-    <a class="card" href="roogaming/index.html">
-      <div class="icon" aria-hidden="true">🎮</div>
-      <h2>Roo's games</h2>
-      <p>Play Roo's browser games.</p>
-      <span class="go">Open →</span>
+    <a class="card" href="Platformer.html">
+      <div class="icon" aria-hidden="true">🏁</div>
+      <h2>Duck Platformer</h2>
+      <p>The new version. Race over the blob obstacles to the checkered finish line and beat your best time.</p>
+      <span class="controls">Arrows or A/D to run, Space to jump</span>
+      <span class="go">Play →</span>
+    </a>
+
+  </nav>
+
+  <section class="hero">
+    <h2 class="section">Scratch games</h2>
+    <p>Roo's Scratch projects, running right in the page. Use the green flag to restart and the red button to stop.</p>
+  </section>
+
+  <nav class="grid" aria-label="Scratch games">
+
+    <a class="card" href="Animal.html">
+      <div class="icon" aria-hidden="true">🐾</div>
+      <h2>Animal</h2>
+      <p>A little animal that scurries after your mouse pointer.</p>
+      <span class="controls">Mouse</span>
+      <span class="go">Play →</span>
+    </a>
+
+    <a class="card" href="Arm.html">
+      <div class="icon" aria-hidden="true">💪</div>
+      <h2>Arm</h2>
+      <p>A jointed arm that bends and reaches towards your mouse.</p>
+      <span class="controls">Mouse</span>
+      <span class="go">Play →</span>
+    </a>
+
+    <a class="card" href="Bear_Platformer.html">
+      <div class="icon" aria-hidden="true">🐻</div>
+      <h2>Bear Platformer</h2>
+      <p>Guide the bear through the levels past water, portals and the Beargrinders.</p>
+      <span class="controls">Arrows or W/A/S/D, Space</span>
+      <span class="go">Play →</span>
+    </a>
+
+    <a class="card" href="Chick_Toss.html">
+      <div class="icon" aria-hidden="true">🐥</div>
+      <h2>Chick Toss</h2>
+      <p>Fire chicks from the cannon to knock down Tyler's tower, then face Boss Tyler.</p>
+      <span class="controls">Mouse to aim, Space to fire</span>
+      <span class="go">Play →</span>
+    </a>
+
+    <a class="card" href="Coin_Clicker.html">
+      <div class="icon" aria-hidden="true">🪙</div>
+      <h2>Coin Clicker</h2>
+      <p>Click the coin to earn money and buy upgrades to level up.</p>
+      <span class="controls">Mouse</span>
+      <span class="go">Play →</span>
+    </a>
+
+    <a class="card" href="Diep.io.html">
+      <div class="icon" aria-hidden="true">🛡️</div>
+      <h2>Diep.io</h2>
+      <p>Drive the Overlord tank and send your drones after the enemy tanks.</p>
+      <span class="controls">Arrows or E/S/D/F, A and Z for drones</span>
+      <span class="go">Play →</span>
+    </a>
+
+    <a class="card" href="Dont_get_Hit.html">
+      <div class="icon" aria-hidden="true">🦇</div>
+      <h2>Don't Get Hit</h2>
+      <p>Fly the bat around and dodge everything for as long as you can.</p>
+      <span class="controls">Arrow keys</span>
+      <span class="go">Play →</span>
+    </a>
+
+    <a class="card" href="Dot_Clicking_Game.html">
+      <div class="icon" aria-hidden="true">⚫</div>
+      <h2>Dot Clicking Game</h2>
+      <p>Click the dots before they get past you and cost you health.</p>
+      <span class="controls">Mouse</span>
+      <span class="go">Play →</span>
+    </a>
+
+    <a class="card" href="Eggdog.html">
+      <div class="icon" aria-hidden="true">🥚</div>
+      <h2>Eggdog</h2>
+      <p>Eggdog. Bouncing. Sit back and enjoy.</p>
+      <span class="controls">Just watch</span>
+      <span class="go">Play →</span>
+    </a>
+
+    <a class="card" href="Fat_Rat_Simulator.html">
+      <div class="icon" aria-hidden="true">🐀</div>
+      <h2>Fat Rat Simulator</h2>
+      <p>Two rats, one screen. A two-player game for sharing a keyboard.</p>
+      <span class="controls">P1: arrows, K, O/P · P2: E/S/D/F, Q/W</span>
+      <span class="go">Play →</span>
+    </a>
+
+    <a class="card" href="Fruit_Catching_Game.html">
+      <div class="icon" aria-hidden="true">🍉</div>
+      <h2>Fruit Catching Game</h2>
+      <p>Catch the falling fruit before it hits the ground.</p>
+      <span class="controls">Left and right arrows</span>
+      <span class="go">Play →</span>
+    </a>
+
+    <a class="card" href="Gunner-Chick.html">
+      <div class="icon" aria-hidden="true">🔫</div>
+      <h2>Gunner Chick</h2>
+      <p>Run, jump and shoot down the bats as an armed chick.</p>
+      <span class="controls">Arrows to move, Space to shoot, 1–4</span>
+      <span class="go">Play →</span>
+    </a>
+
+    <a class="card" href="Hangdog.html">
+      <div class="icon" aria-hidden="true">🐶</div>
+      <h2>Hangdog</h2>
+      <p>Answer the sums correctly to save the dog from the pot.</p>
+      <span class="controls">Type your answers</span>
+      <span class="go">Play →</span>
+    </a>
+
+    <a class="card" href="Jumping_Square_Game.html">
+      <div class="icon" aria-hidden="true">🟦</div>
+      <h2>Jumping Square Game</h2>
+      <p>Dodge the columns and bullets and beat your record time.</p>
+      <span class="controls">Arrows and Space</span>
+      <span class="go">Play →</span>
+    </a>
+
+    <a class="card" href="Maze.html">
+      <div class="icon" aria-hidden="true">🌀</div>
+      <h2>Maze</h2>
+      <p>Find your way into the centre of the round maze.</p>
+      <span class="controls">Arrow keys</span>
+      <span class="go">Play →</span>
+    </a>
+
+    <a class="card" href="Pinball.html">
+      <div class="icon" aria-hidden="true">🎱</div>
+      <h2>Pinball</h2>
+      <p>Keep the ball in play with the flippers and beat your record.</p>
+      <span class="controls">Space</span>
+      <span class="go">Play →</span>
+    </a>
+
+    <a class="card" href="Shooting_Platformer.html">
+      <div class="icon" aria-hidden="true">🏹</div>
+      <h2>Shooting Platformer</h2>
+      <p>Pick Normal, Expert or Immortal mode, then shoot your way past the enemies.</p>
+      <span class="controls">Arrows or W/A/D, Space</span>
+      <span class="go">Play →</span>
     </a>
 
     <!--
-      To add another part of the website, copy the block below,
-      remove class="soon", and set href to the file name, e.g.:
-
-      <a class="card" href="quotes.html">
-        <div class="icon" aria-hidden="true">📋</div>
-        <h2>Quotes</h2>
-        <p>Short description of the page.</p>
-        <span class="go">Open →</span>
-      </a>
+      To add another game, copy a card above and set href to the
+      game's file name in this roogaming folder, e.g. href="Racer.html".
     -->
-
-    <a class="card soon" href="#" aria-disabled="true" tabindex="-1">
-      <div class="icon" aria-hidden="true">＋</div>
-      <h2>More coming soon</h2>
-      <p>New tools will appear here.</p>
-      <span class="go">Not available yet</span>
-    </a>
 
   </nav>
 </main>
@@ -102,6 +243,5 @@
 <script>
   document.getElementById('year').textContent = '© ' + new Date().getFullYear();
 </script>
-
 
 </body></html>
